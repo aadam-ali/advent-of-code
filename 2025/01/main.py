@@ -21,7 +21,6 @@ class Dial:
             if self.position == 0:
                 self.zero_hit_counter += 1
 
-           
         if self.position == 0:
             self.stopped_at_zero_counter += 1
 

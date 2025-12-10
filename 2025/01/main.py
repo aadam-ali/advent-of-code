@@ -7,10 +7,12 @@ class Dial:
         self.stopped_at_zero_counter = 0
 
     def turn(self, direction: str, clicks: int):
-        if direction == "L":
-            clicks = -clicks
+        modifier = -1 if direction == "L" else 1
 
-        self.position = (self.position + clicks) % 100
+        for _ in range(0, clicks):
+            self.position += 1 * modifier
+
+        self.position %= 100
 
         if self.position == 0:
             self.stopped_at_zero_counter += 1
